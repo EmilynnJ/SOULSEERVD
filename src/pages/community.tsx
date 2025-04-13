@@ -29,7 +29,7 @@ const communityPosts = [
     author: "Celestial Sarah",
     authorRole: "Reader",
     authorImage: "https://i.pravatar.cc/150?img=5",
-    content: "Mercury retrograde is ending soon! Here are some tips to navigate the final days:\\\n\\\n1. Double-check all communications\\\n2. Back up your digital data\\\n3. Be patient with technology issues\\\n4. Use this time for reflection rather than new beginnings",
+    content: "Mercury retrograde is ending soon! Here are some tips to navigate the final days:\\\\n\\\\n1. Double-check all communications\\\\n2. Back up your digital data\\\\n3. Be patient with technology issues\\\\n4. Use this time for reflection rather than new beginnings",
     timestamp: "5 hours ago",
     likes: 42,
     comments: 15,
