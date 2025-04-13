@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Header } from "@/components/layout/Header";
-import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -224,7 +223,6 @@ const AdminDashboardPage = () => {
     return (
       <div className="app-background min-h-screen flex flex-col dark">
         <Header />
-        <Navigation />
         <main className="flex-1 container mx-auto px-4 py-8 flex items-center justify-center">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
         </main>
@@ -236,7 +234,6 @@ const AdminDashboardPage = () => {
   return (
     <div className="app-background min-h-screen flex flex-col dark">
       <Header />
-      <Navigation />
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="glass-effect rounded-lg p-6">
