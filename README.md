@@ -48,3 +48,36 @@ export default tseslint.config({
   },
 })
 ```
+
+# SoulSeer Project
+
+## Authentication and Database Changes
+
+All references to the "fine" library have been removed from the project. The library was previously used for:
+
+1. Authentication (auth functionality)
+2. Database operations (table queries)
+
+### What Changed:
+
+- Removed the fine.ts file completely
+- Removed all imports referencing fine
+- Replaced authentication logic with simple placeholder variables
+- Replaced database operations with console.log placeholders
+- Components using authentication now use generic placeholder variables
+
+### Next Steps:
+
+To implement authentication and database functionality, you'll need to:
+
+1. Choose and integrate an authentication system (Auth.js, Firebase Auth, etc.)
+2. Implement a database solution (MongoDB, Firebase, etc.)
+3. Update the components using placeholders with real implementations
+
+### Affected Components:
+
+Authentication and database operations were used throughout the application. Key components affected include:
+- Authentication flow (login.tsx, logout.tsx, signup.tsx)
+- Route protection (route-components.tsx)
+- Database operations in various components
+- Session state in components like Header.tsx

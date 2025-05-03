@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { fine } from "@/lib/fine";
 import { addDays, format, addMinutes, isBefore, isAfter, startOfDay } from "date-fns";
 
 interface ScheduleReadingProps {
@@ -87,8 +86,8 @@ export function ScheduleReading({
       const scheduledTime = new Date(date);
       scheduledTime.setHours(hours, minutes, 0, 0);
       
-      // Create the booking
-      await fine.table("bookings").insert({
+      // Database operation placeholder - create booking
+      console.log('Create booking:', {
         clientId,
         readerId,
         serviceId,
@@ -98,12 +97,15 @@ export function ScheduleReading({
         amount: servicePrice
       });
       
-      // Deduct the amount from client balance
+      // Database operation placeholder - update user balance
       const newBalance = clientBalance - servicePrice;
-      await fine.table("users").update({ balance: newBalance }).eq("id", clientId);
+      console.log('Update user balance:', { 
+        balance: newBalance,
+        userId: clientId 
+      });
       
-      // Add transaction record
-      await fine.table("transactions").insert({
+      // Database operation placeholder - record transaction
+      console.log('Record transaction:', {
         userId: clientId,
         type: "booking",
         amount: servicePrice,

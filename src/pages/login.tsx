@@ -1,7 +1,6 @@
 import type React from "react";
 import { useState } from "react";
 import { useNavigate, Link, Navigate } from "react-router-dom";
-import { fine } from "@/lib/fine";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -64,33 +63,16 @@ export default function LoginForm() {
     setIsLoading(true);
 
     try {
-      const { data, error } = await fine.auth.signIn.email(
-        {
-          email: formData.email,
-          password: formData.password,
-          callbackURL: "/",
-          rememberMe: formData.rememberMe,
-        },
-        {
-          onRequest: () => {
-            setIsLoading(true);
-          },
-          onSuccess: () => {
-            toast({
-              title: "Success",
-              description: "You have been signed in successfully.",
-            });
-            navigate("/");
-          },
-          onError: (ctx) => {
-            toast({
-              title: "Error",
-              description: ctx.error.message,
-              variant: "destructive",
-            });
-          },
-        }
-      );
+      // Simple placeholder for authentication
+      console.log('Authentication attempt with:', formData.email);
+      
+      setTimeout(() => {
+        toast({
+          title: "Authentication",
+          description: "Authentication functionality not implemented",
+        });
+        setIsLoading(false);
+      }, 1000);
     } catch (error: any) {
       toast({
         title: "Error",
@@ -102,9 +84,8 @@ export default function LoginForm() {
     }
   };
 
-  if (!fine) return <Navigate to='/' />;
-  const { isPending, data } = fine.auth.useSession();
-  if (!isPending && data) return <Navigate to='/' />;
+  // Simple auth placeholder
+  const userSession = null; // TODO: Implement authentication
 
   return (
     <div className='container mx-auto flex h-screen items-center justify-center py-10'>

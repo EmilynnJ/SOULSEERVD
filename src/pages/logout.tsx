@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fine } from "@/lib/fine";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
@@ -11,7 +10,10 @@ export default function Logout() {
   useEffect(() => {
     async function handleLogout() {
       try {
-        await fine.auth.signOut();
+        // Simple placeholder for logout functionality
+        console.log('Logout attempt');
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
         toast({
           title: "Signed out",
           description: "You have been signed out successfully.",

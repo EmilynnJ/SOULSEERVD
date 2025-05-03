@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { Menu, X, User, LogIn } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { fine } from "@/lib/fine";
 import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { data: session } = fine.auth.useSession();
+  // Simple auth placeholder - no reference to fine
+  const userSession = null; // TODO: Implement authentication
   const navigate = useNavigate();
 
   const toggleMenu = () => {
@@ -37,7 +37,7 @@ export function Header() {
               <Link to="/about" className="text-white hover:text-primary">About</Link>
             </div>
             
-            {session?.user ? (
+            {userSession?.user ? (
               <div className="flex items-center space-x-4">
                 <Button 
                   variant="outline" 
@@ -97,7 +97,7 @@ export function Header() {
             <Link to="/policies" className="block text-white hover:text-primary">Policies</Link>
             <Link to="/about" className="block text-white hover:text-primary">About</Link>
             
-            {session?.user ? (
+            {userSession?.user ? (
               <>
                 <Button 
                   variant="outline" 
